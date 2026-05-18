@@ -1,0 +1,107 @@
+<h1>Transacciones</h1>
+
+<select [(ngModel)]="tipoTransaccion">
+
+  <option value="">
+    Seleccione una opción
+  </option>
+
+  <option value="retiro">
+    Retiro
+  </option>
+
+  <option value="transferencia">
+    Transferencia
+  </option>
+
+  <option value="recarga">
+    Recarga
+  </option>
+
+</select>
+
+<hr>
+
+<!-- ================================= -->
+<!-- RETIRO -->
+<!-- ================================= -->
+
+<div *ngIf="tipoTransaccion === 'retiro'">
+
+  <h2>Retiro</h2>
+
+  <input
+    type="number"
+    placeholder="ID billetera"
+    [(ngModel)]="billeteraOrigenId"
+  >
+
+  <input
+    type="number"
+    placeholder="Monto"
+    [(ngModel)]="monto"
+  >
+
+  <button (click)="retirar()">
+    Retirar
+  </button>
+
+</div>
+
+<!-- ================================= -->
+<!-- TRANSFERENCIA -->
+<!-- ================================= -->
+
+<div *ngIf="tipoTransaccion === 'transferencia'">
+
+  <h2>Transferencia</h2>
+
+  <input
+    type="number"
+    placeholder="Billetera origen"
+    [(ngModel)]="billeteraOrigenId"
+  >
+
+  <input
+    type="number"
+    placeholder="Billetera destino"
+    [(ngModel)]="billeteraDestinoId"
+  >
+
+  <input
+    type="number"
+    placeholder="Monto"
+    [(ngModel)]="monto"
+  >
+
+  <button (click)="transferir()">
+    Transferir
+  </button>
+
+</div>
+
+<!-- ================================= -->
+<!-- RECARGA -->
+<!-- ================================= -->
+
+<div *ngIf="tipoTransaccion === 'recarga'">
+
+  <h2>Recarga</h2>
+
+  <input
+    type="number"
+    placeholder="ID billetera"
+    [(ngModel)]="billeteraOrigenId"
+  >
+
+  <input
+    type="number"
+    placeholder="Monto"
+    [(ngModel)]="monto"
+  >
+
+  <button (click)="recargar()">
+    Recargar
+  </button>
+
+</div>

@@ -1,0 +1,39 @@
+/* Botón menú */
+.menu-btn{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-size: 20px;
+}
+
+/* Menu */
+.menu{
+  width: 220px;
+  background-color: #1e293b;
+  color: white;
+
+  padding: 20px;
+  text-align: center;
+
+
+  min-height: 100vh;
+}
+
+.menu ul{
+  list-style: none;
+  padding: 0;
+}
+
+.menu li{
+  margin: 20px 0;
+  cursor: pointer;
+}
+

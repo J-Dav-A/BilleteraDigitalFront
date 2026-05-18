@@ -1,0 +1,25 @@
+.container{
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input{
+  padding: 10px;
+}
+
+button{
+  padding: 10px;
+  cursor: pointer;
+}

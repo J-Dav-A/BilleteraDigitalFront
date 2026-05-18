@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  min-height: 90vh;
+}
+
+/* Contenido principal */
+.contenido{
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  margin: auto;
+}
+
+.contenido h1{
+  font-size: 50px;
+}
+
+.contenido p{
+  font-size: 20px;
+}

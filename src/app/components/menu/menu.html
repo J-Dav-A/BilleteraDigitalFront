@@ -1,0 +1,43 @@
+<button class="menu-btn" (click)="toggleMenu()">
+  ☰
+</button>
+
+<div class="menu" *ngIf="menuAbierto">
+
+  <h2>Menú</h2>
+
+  <ul>
+
+    <li
+      *ngIf="router.url !== '/dashboard'"
+      routerLink="/dashboard">
+      Dashboard
+    </li>
+
+    <li
+      *ngIf="router.url !== '/retiro'"
+      routerLink="/retiro">
+      Retirar
+    </li>
+
+    <li
+      *ngIf="router.url !== '/deposito'"
+      routerLink="/deposito">
+      Depositar
+    </li>
+
+    <li
+      *ngIf="router.url !== '/transferencia'"
+      routerLink="/transferencia">
+      Transferir
+    </li>
+
+    <li
+      *ngIf="router.url !== '/historial'"
+      routerLink="/historial">
+      Historial
+    </li>
+
+  </ul>
+
+</div>

@@ -1,0 +1,18 @@
+<h2>Retirar dinero</h2>
+
+<input type="number"
+       placeholder="ID billetera"
+       [(ngModel)]="billeteraOrigenId">
+
+<br><br>
+
+<input type="number"
+       placeholder="Monto"
+       [(ngModel)]="monto">
+
+<br><br>
+
+
+<button (click)="retirar()">
+  Retirar
+</button>
