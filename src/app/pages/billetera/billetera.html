@@ -1,1 +1,54 @@
-<p>billetera works!</p>
+<div class="pagina">
+
+  <div class="billetera-container">
+
+    <h1>Crear Billetera</h1>
+
+    <form>
+
+      <input
+        type="text"
+        placeholder="Nombre de la billetera"
+        [(ngModel)]="nombre"
+        name="nombre"
+      >
+
+      <select
+        [(ngModel)]="tipoBilletera"
+        name="tipoBilletera"
+      >
+
+        <option value="">
+          Seleccione un tipo
+        </option>
+
+        <option value="AHORRO">
+          Ahorro
+        </option>
+
+        <option value="CORRIENTE">
+          Corriente
+        </option>
+
+        <option value="EMPRESARIAL">
+          Empresarial
+        </option>
+
+      </select>
+
+      <input
+        type="number"
+        placeholder="Límite de transacción"
+        [(ngModel)]="limite"
+        name="limiteTransaccion"
+      >
+
+      <button type="button" (click)="crearBilletera()">
+        Crear Billetera
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

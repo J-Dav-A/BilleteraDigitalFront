@@ -1,30 +1,43 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../../core/services/autenticacion';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './login.html',
-  styleUrl: './login.css'
+  styleUrl: '/login.css'
 })
 export class LoginComponent {
-
   correo: string = '';
   password: string = '';
 
-  login() {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
+  login() {
     const data = {
       correo: this.correo,
-      password: this.password
+      password: this.password,
     };
 
-    console.log(data);
+    this.authService.login(data).subscribe({
+      next: (res: any) => {
+        this.authService.guardarToken(res.token);
 
-    // Aquí luego llamarás al backend
-    // this.authService.login(data)
+        console.log(res);
 
-    alert('Login enviado');
+        this.router.navigate(['/dashboard']);
+      },
+
+      error: (err) => {
+        console.error(err);
+      },
+    });
   }
 }

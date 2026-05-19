@@ -1,0 +1,107 @@
+/* Fondo general */
+/* Contenedor de toda la página */
+.pagina{
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+
+  padding: 20px;
+}
+
+/* Contenedor principal */
+.billetera-container{
+  width: 400px;
+
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+
+  animation: aparecer 0.7s ease;
+}
+
+/* Título */
+.billetera-container h1{
+  text-align: center;
+
+  color: #2c3e50;
+
+  margin-bottom: 25px;
+}
+
+/* Formulario */
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs y select */
+input,
+select{
+  padding: 12px;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+/* Focus */
+input:focus,
+select:focus{
+  border-color: #4a90e2;
+
+  box-shadow: 0 0 6px rgba(74,144,226,0.4);
+
+  outline: none;
+}
+
+/* Botón */
+button{
+  padding: 13px;
+
+  background: #4a90e2;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+/* Hover */
+button:hover{
+  background: #357abd;
+
+  transform: scale(1.02);
+}
+
+/* Animación */
+@keyframes aparecer{
+
+  from{
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}

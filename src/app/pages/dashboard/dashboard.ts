@@ -5,10 +5,8 @@ import { MenuComponent } from '../../components/menu/menu';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MenuComponent],
+  imports: [CommonModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
-export class DashboardComponent {
-
-}
+export class DashboardComponent {}

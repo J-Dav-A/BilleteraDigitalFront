@@ -1,107 +1,59 @@
-<h1>Transacciones</h1>
+<div class="transacciones-container">
+  <h1>Transacciones</h1>
 
-<select [(ngModel)]="tipoTransaccion">
+  <select [(ngModel)]="tipoTransaccion">
+    <option value="">Seleccione una opción</option>
 
-  <option value="">
-    Seleccione una opción
-  </option>
+    <option value="retiro">Retiro</option>
 
-  <option value="retiro">
-    Retiro
-  </option>
+    <option value="transferencia">Transferencia</option>
 
-  <option value="transferencia">
-    Transferencia
-  </option>
+    <option value="recarga">Recarga</option>
+  </select>
 
-  <option value="recarga">
-    Recarga
-  </option>
+  <hr />
 
-</select>
+  <!-- ================================= -->
+  <!-- RETIRO -->
+  <!-- ================================= -->
 
-<hr>
+  <div *ngIf="tipoTransaccion === 'retiro'">
+    <h2>Retiro</h2>
 
-<!-- ================================= -->
-<!-- RETIRO -->
-<!-- ================================= -->
+    <input type="number" placeholder="ID billetera" [(ngModel)]="billeteraOrigenId" />
 
-<div *ngIf="tipoTransaccion === 'retiro'">
+    <input type="number" placeholder="Monto" [(ngModel)]="monto" />
 
-  <h2>Retiro</h2>
+    <button (click)="retirar()">Retirar</button>
+  </div>
 
-  <input
-    type="number"
-    placeholder="ID billetera"
-    [(ngModel)]="billeteraOrigenId"
-  >
+  <!-- ================================= -->
+  <!-- TRANSFERENCIA -->
+  <!-- ================================= -->
 
-  <input
-    type="number"
-    placeholder="Monto"
-    [(ngModel)]="monto"
-  >
+  <div *ngIf="tipoTransaccion === 'transferencia'">
+    <h2>Transferencia</h2>
 
-  <button (click)="retirar()">
-    Retirar
-  </button>
+    <input type="number" placeholder="Billetera origen" [(ngModel)]="billeteraOrigenId" />
 
-</div>
+    <input type="number" placeholder="Billetera destino" [(ngModel)]="billeteraDestinoId" />
 
-<!-- ================================= -->
-<!-- TRANSFERENCIA -->
-<!-- ================================= -->
+    <input type="number" placeholder="Monto" [(ngModel)]="monto" />
 
-<div *ngIf="tipoTransaccion === 'transferencia'">
+    <button (click)="transferir()">Transferir</button>
+  </div>
 
-  <h2>Transferencia</h2>
+  <!-- ================================= -->
+  <!-- RECARGA -->
+  <!-- ================================= -->
 
-  <input
-    type="number"
-    placeholder="Billetera origen"
-    [(ngModel)]="billeteraOrigenId"
-  >
+  <div *ngIf="tipoTransaccion === 'recarga'">
+    <h2>Recarga</h2>
 
-  <input
-    type="number"
-    placeholder="Billetera destino"
-    [(ngModel)]="billeteraDestinoId"
-  >
+    <input type="number" placeholder="ID billetera" [(ngModel)]="billeteraOrigenId" />
 
-  <input
-    type="number"
-    placeholder="Monto"
-    [(ngModel)]="monto"
-  >
+    <input type="number" placeholder="Monto" [(ngModel)]="monto" />
 
-  <button (click)="transferir()">
-    Transferir
-  </button>
-
-</div>
-
-<!-- ================================= -->
-<!-- RECARGA -->
-<!-- ================================= -->
-
-<div *ngIf="tipoTransaccion === 'recarga'">
-
-  <h2>Recarga</h2>
-
-  <input
-    type="number"
-    placeholder="ID billetera"
-    [(ngModel)]="billeteraOrigenId"
-  >
-
-  <input
-    type="number"
-    placeholder="Monto"
-    [(ngModel)]="monto"
-  >
-
-  <button (click)="recargar()">
-    Recargar
-  </button>
-
+    <button (click)="recargar()">Recargar</button>
+  </div>
 </div>
